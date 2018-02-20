@@ -1,0 +1,45 @@
+<!-- <div class="container">
+
+    <flex-slider flex-slide="s in mySlides" prev-text="" next-text="">
+        <li>
+            <img ng-src="{{s}}">
+        </li>
+    </flex-slider>
+
+</div> -->
+<!-- <div class="container-fluid"> -->
+<section class="landing">
+    <div class="main-slider hidden-xs" ng-if="Homeslider.length>0">
+        <flex-slider flex-slide="s in Homeslider track by $index" prev-text="" next-text="">
+            <li auto-heightfixed >
+                <a ui-sref="skin({name:s.url.name,id:s.url._id})">
+                <!-- <a href="{{s.url}}"> -->
+                    <div class="main-img">
+                        <img ng-src="{{s.image1|uploadpath}}" auto-heightfixed >
+                        <div class="front-img">
+                            <img ng-src="{{s.image2|uploadpath}}" auto-heightfixed >
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </flex-slider>
+
+    </div>
+    <div class="main-slider hidden-lg hidden-md hidden-sm" ng-if="Homeslider.length>0">
+        <flex-slider flex-slide="s in Homeslider track by $index" prev-text="" next-text="">
+            <li auto-height>
+                <a ui-sref="skin({name:s.url.name,id:s.url._id})">
+                <!-- <a href="{{s.url}}"> -->
+                    <div class="main-img" >
+                        <img ng-src="{{s.image3|uploadpath}}" auto-heightfixed>
+                        <div class="front-img">
+                            <img ng-src="{{s.image4|uploadpath}}" auto-heightfixed>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </flex-slider>
+
+    </div>
+</section>
+<!-- </div> -->

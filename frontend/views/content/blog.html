@@ -1,0 +1,144 @@
+<section scrolldown>
+  <section>
+    <div class="head-top hidden-xs">
+      <img ng-src="{{blogHeader.image|uploadpath}}" alt="{{blogHeader.name}}" class="img-responsive give-height">
+      <!-- <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+        <img src="img/scroll-down.png" alt="Renita">
+      </div> -->
+      <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+        <img src="frontend/img/scroll-down.png" alt="Renita">
+      </div>
+    </div>
+  </section>
+  <section class="hidden-lg hidden-md hidden-sm">
+    <div class="head-top">
+      <img ng-src="{{blogHeader.image1|uploadpath}}" alt="{{blogHeader.name}}" class="img-responsive w100 " auto-heightfixed>
+      <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+        <img src="frontend/img/scroll-down.png" alt="Renita">
+      </div>
+    </div>
+  </section>
+  <div id="top-scroll"></div>
+  <section class="pt100 second">
+    <div class="container">
+      <div>
+        <p>
+          Filter by: <span class="tagFilter" ng-if="filter != null">
+            {{filter}}
+          </span> <span ng-if="filter != null" class="clearFilter" ng-click="clearFilter()">Clear Filter</span>
+        </p>
+      </div>
+      <div class="row mt20">
+        <div class="col-md-8">
+          <div class="blog-left-side">
+            <div ng-if="blog.length === 0" style="min-height:667px;">
+              <h4 class="text-center">{{blogmsg}}</h4>
+            </div>
+            <div class="row" infinite-scroll='loadMore()' infinite-scroll-disabled="shouldscroll">
+              <div class="col-md-6" ng-repeat="item in blog track by $index">
+                <div class="blog-box">
+                  <div ng-if="item.video" class="blog-img relate blog-img-front">
+                    <iframe ng-src="{{'https://www.youtube.com/embed/'+ item.video + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen
+                      width="100%" class="blog-iframe"></iframe>
+                    <!-- <img src="img/play.png" alt="" width="35px" class="img-responsive doneLoading" draggable="false" ng-if="item.video"> -->
+                  </div>
+                  <div ng-if="item.image && !item.video">
+                    <div class="blog-img relate blog-img-front">
+                      <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100" ng-hide="item.video">
+                    </div>
+                  </div>
+                  <!-- <div ng-if="item.image && !item.video">
+                           <a class="various fancybox.iframe" fancybox-box href="{{item.image|serverimage}}">
+                              <div class="blog-img relate">
+                                 <img ng-src="http://img.youtube.com/vi/{{item.video}}/maxresdefault.jpg" alt="Dr Renita rajan" class="img-responsive width100" ng-if="item.video">
+                                 <img ng-src="{{item.image|serverimage}}" alt="Dr Renita rajan" class="img-responsive width100" ng-hide="item.video">
+                                 <div class="circle">
+                                    <img src="img/play.png" alt="" class="img-responsive doneLoading" draggable="false" ng-if="item.video">
+                                 </div>
+                              </div>
+                           </a>
+                        </div> -->
+                  <div class="blog-title mt15 h40">
+                    <h4 class="font-bold color-primary text-up">{{item.name}}</h4>
+                  </div>
+                  <div class="blog-date color-base">
+                    <span>{{item.date|date:'fullDate'}}</span>
+                  </div>
+                  <div class="blog-content mt10 color-base">
+                    <p>{{item.desc}}</p>
+                  </div>
+                  <div class="box-footer mt30">
+                    <div class="float-left">
+                      <button type="button" name="button" class="text-up outline-btn btn-padding" analytics-on analytics-event="Blog View" analytics-category="blog"
+                        analytics-label=data ng-click="analyticalCodeBlog(item.name)" ui-sref="blog-detail({'id':item._id})">
+                        Read More
+                        </button>
+                    </div>
+                    <!--<div class="float-right color-grey">
+                      <i class="fa fa-eye"></i> {{item.views}}
+                    </div>-->
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="blog-right-side">
+            <div class="blog-search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" ng-model="search.search" ng-change="doSearch() ">
+                <span class="input-group-btn" ng-click="doSearch()">
+                           <button class="btn search-btn search" type="button">
+                             <i class="fa fa-search"></i>
+                             </button>
+                         </span>
+              </div>
+            </div>
+            <div class="blog-popular-tag mt30">
+              <h4 class="color-base text-up font-bold">Popular post</h4>
+              <div ng-if="post.length === 0">
+                <h4 class="text-center">{{popularmsg}}</h4>
+              </div>
+              <div class="row mt20 pointer" ng-repeat="item in post track by $index" ui-sref="blog-detail({'id':item._id})">
+                <div class="col-md-3 col-xs-3">
+                  <div class="p-img-box">
+                    <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
+                  </div>
+                </div>
+                <div class="col-md-9 padding0 border-btm col-xs-9">
+                  <div class="blog-p-title">
+                    <h5 class="text-up color-base margin0 font-bold">{{item.name}}</h5>
+                  </div>
+                  <div class="blog-p-date">
+                    <span class="color-base f12">{{item.date|date:'fullDate'}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="blog-popular-tag mt30">
+              <h4 class="color-base text-up font-bold">tags</h4>
+              <div class="all-tags my-list mt20">
+                <div ng-if="tags.length === 0">
+                  <h4 class="text-center">{{tagmsg}}</h4>
+                </div>
+                <ul class="padding0 font-ralway text-up color-base">
+                  <li ng-repeat="tag in tags" ng-show="t.showTag || $index< 15" ng-click="gotoTagFun(tag)">
+                    <span>{{tag.name}}</span>
+                  </li>
+                </ul>
+                <div class="view-more mt30" ng-if="tags.length>15">
+                  <span class="text-up font-ralway" ng-show="!t.showTag" ng-click="showTag(true)">view more</span>
+                  <span class="text-up font-ralway" ng-show="t.showTag" ng-click="showTag(false)">view less</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="frontend/img/top-scroll.png" alt="Renita">
+  </div>
+</section>

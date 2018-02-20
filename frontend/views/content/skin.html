@@ -1,0 +1,161 @@
+<section scrolldown>
+   <section class="hidden-xs">
+      <div class="head-top" ng-if="category.length!=0">
+         <img ng-src="{{category[0].category.image|uploadpath}}" alt="{{category[0].category.name}}" class="img-responsive w100 give-height">
+         <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+            <img src="frontend/img/scroll-down.png" alt="Renita">
+         </div>
+      </div>
+   </section>
+   <section class="hidden-lg hidden-md hidden-sm">
+      <div class="head-top">
+         <img ng-src="{{category[0].category.image1|uploadpath}}" alt="{{category[0].category.name}}" class="img-responsive w100 " auto-heightfixed>
+         <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+            <img src="frontend/img/scroll-down.png" alt="Renita">
+         </div>
+      </div>
+   </section>
+   <div id="top-scroll"></div>
+   <section class="pt100 second m-mb-0">
+      <div class="hidden-xs">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div ng-if="category.length == 0">
+                     <h1>No Data Found</h1>
+                  </div>
+                  <div class="data">
+                     <p ng-bind-html="category[0].category.description">
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row mt20 mb20">
+               <div class="col-md-3 col-sm-3" ng-if="category.length>0">
+                  <div class="tab-list2">
+                     <ul class="padding0 margin0">
+                        <li ng-style="data.style" ng-class="{ 'active-tab':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in category" {{data}}><a ng-style="data.stylea" href="">{{data.subCatName}}</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-md-9 col-sm-9" ng-if="subCategory.subCatName">
+                  <div class="tabs">
+                     <div class="first">
+                        <div class="data-title2 " style="border-bottom: 1px solid {{category[0].category.color}}">
+                           <h4 class="color-success font-semi" style="color:{{category[0].category.color}}">{{subCategory.subCatName}}</h4>
+                        </div>
+                        <div ng-if="subCategory.subCatDescription.length==0" class="no-data">
+                           <h1>No Data Found</h1>
+                        </div>
+                        <div class="data-main mt15" ng-if="subCategory.subCatDescription" ng-bind-html="subCategory.subCatDescription">
+
+                        </div>
+                        <!-- <div class="data-main mt15 no-data" ng-if="subCategory.subCatDescription" ng-bind-html="subCategory.subCatDescription">
+
+                        </div> -->
+
+                        <div ng-if="subCategory.video">
+                          <iframe  ng-src="{{'https://www.youtube.com/embed/'+ subCategory.video + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen width="100%"  class="blog-iframe iframe-before-after" ></iframe>
+
+                        </div>
+                     </div>
+                  </div>
+                  <div class="first" ng-if="tabs=='pig'">
+                  </div>
+                  <div class="first" ng-if="tabs=='tato'">
+                     <div class="data-title2">
+                        <h4 class="color-success font-semi">TATOO REMOVAL</h4>
+                     </div>
+                     <div class="data-main mt15">
+                        <p>The PICOWAY is called the Ferrari of Tattoo Removal – and works great for both coloured and black tattoos. You will be happy to watch your tattoos fade away in half the time as with other lasers, and with much less discomfort.
+                           Truly, nothing needs to last forever.</p>
+                        <div class="data-image">
+                           <div class="img-box1">
+                              <img src="frontend/img/tatoo.jpg" alt="Dr Renita Rajan" class="img-responsive">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="first" ng-if="tabs=='faci'">
+                  </div>
+                  <div class="first" ng-if="tabs=='dull'">
+                  </div>
+                  <div class="first" ng-if="tabs=='anti'">
+                  </div>
+                  <div class="first" ng-if="tabs=='uneven'">
+                  </div>
+                  <div class="first" ng-if="tabs=='skin'">
+                  </div>
+                  <div class="first" ng-if="tabs=='general'">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="hidden-lg hidden-md hidden-sm">
+         <div class="container">
+            <div class="row">
+               <div class="mobile-ui ">
+                  <!-- old flexslider Ui -->
+
+                  <!-- <flex-slider flex-slide="item in category track by $index" animation="slide" item-width="150" item-margin="10" animationloop="true"
+              move="2">
+              <li class="text-center" ng-style="item.style" ng-class="{'active-tab':item.activetab}" ng-click="tabActive(item._id,$index)">
+                <a ng-style="item.stylea">
+                    {{item.subCatName}}</a>
+              </li>
+            </flex-slider> -->
+
+                  <!-- old flexslider Ui -->
+
+                  <!-- uib accordion new mobile Ui -->
+
+                  <uib-accordion close-others="true" class="cat-menu" ng-if="category.length>=1">
+                     <div uib-accordion-group is-open=status.open1 >
+                        <uib-accordion-heading>
+                           <h4 ng-style="subCategory.style" class="sub_cat_head"><span>{{subCategory.subCatName}}</span>
+                          <i ng-if="category.length>1" class="pull-right fa" ng-class="{'fa-angle-up': status.open1, 'fa-angle-down': !status.open1}" ></i>
+                          </h4>
+                        </uib-accordion-heading>
+                        <div>
+                           <ul class="sub-cat">
+
+                              <li ng-repeat="item in category" class ="accrordio-li"
+                               ng-if="subCategory.subCatName!=item.subCatName">
+                                 <a ng-click="tabActive(item._id,$index,item)">{{item.subCatName}}</a>
+                                 <!-- <a ng-style="item.style" ng-class="{'panel-default':item.activetab}" ng-click="tabActive(item._id,$index,item)">{{item.subCatName}}</a> -->
+                               </li>
+
+                           </ul>
+                        </div>
+                     </div>
+
+
+                  </uib-accordion>
+
+                  <!-- uib accordion new mobile Ui -->
+
+
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xs-12">
+                  <div class="data-center">
+                     <div ng-if="subCategory.subCatDescription.length==0" class="no-data">
+                        <h4>No Data Found</h4>
+                     </div>
+                     <div class="first" ng-if="tab=='tab1'" ng-bind-html="subCategory.subCatDescription">
+                     </div>
+
+
+
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="frontend/img/top-scroll.png" alt="Renita">
+   </div>
+</section>

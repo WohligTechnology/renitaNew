@@ -1,0 +1,67 @@
+<section scrolldown>
+  <section>
+    <div class="head-top hidden-xs">
+      <img ng-src="{{teamHeader.image|uploadpath}}" alt="{{teamHeader.name}}" class="img-responsive give-height">
+      <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+        <img src="frontend/img/scroll-down.png" alt="Renita">
+      </div>
+    </div>
+  </section>
+  <section class="hidden-lg hidden-md hidden-sm">
+    <div class="head-top">
+      <img ng-src="{{teamHeader.image1|uploadpath}}" alt="{{teamHeader.name}}" class="img-responsive w100 " auto-heightfixed>
+      <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+        <img src="frontend/img/scroll-down.png" alt="Renita">
+      </div>
+    </div>
+  </section>
+  <div id="top-scroll"></div>
+  <section class="second pt100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="data-content mt20 pb20">
+            <h1 class="color-primary font-bold text-up">Our Team</h1>
+            <p>
+              We are a growing team of medical, paramedical and support personnel, working together to improve patient care and treatment
+              experience. We believe that, to be able to stay on the cutting edge of dermatology, our expertise needs to
+              as updated as possible. To this end, we are slowly growing towards a comprehensive dermatology practice, with
+              specialists available to take care of the different subspecialties in this discipline, each of which require
+              different skill sets and technical knowhow.
+            </p>
+            <p>
+              Our Consultants come with the highest credentials in the field, having trained at top notch institutions in this speciality.
+              Further, they are committed to continuously updating themselves in their chosen fields of interest, and are
+              considered regional and national experts in their respective fields. Besides being invited speakers at various
+              academic meets and conferences, our Consultants also actively contribute to clinical publications.
+            </p>
+            <p>
+              Our Nursing and Paramedical staff are well experienced in handling the advanced surgical and laser equipment and are able
+              to deliver outstanding results for any given procedure, entrusted to them. Our admin and support personnel
+              ably enable the medical and paramedical staff to perform their tasks, satisfactorily.
+            </p>
+            <p>
+              We attribute the success of all our endeavours and initiatives to our strong teamwork. We are aware that we are as strong
+              as our weakest team member. Programs aimed at employee welfare, and ongoing training and development projects
+              are carried out to ensure that our workforce stays attuned, updated and happy!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mt30 pb30">
+            <div class="text-center">
+              <h4 class="color-primary font-semi">ALSO READ</h4>
+              <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="about-us">ABOUT US</button>
+              <button type="button" name="button" class="outline-btn btn-padding2 f18 gulp-m mob-mtp" ui-sref="testimonial">TESTIMONIAL</button>
+              <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="consultant">CONSULTANT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="frontend/img/top-scroll.png" alt="Renita">
+  </div>
+</section>

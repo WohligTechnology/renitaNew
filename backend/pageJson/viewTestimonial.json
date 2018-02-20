@@ -1,0 +1,50 @@
+{
+    "title": "Testimonial",
+    "desciption": "",
+    "pageType": "view",
+    "sortable":"Testimonial/sort",
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image"
+    },{
+      "name": "Video",
+      "isSort": "",
+      "tableRef": "video"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editTestimonial",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Testimonial/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete Testimonial?",
+        "api": "Testimonial/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Testimonial/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createTestimonial'})"
+}

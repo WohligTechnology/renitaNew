@@ -1,0 +1,52 @@
+<div class="">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" >
+                      <!-- {{allDocs}} -->
+                        <div class="item active">
+                          <!-- {{doc}} -->
+                            <div class="slider-text">
+                                <div class="fancy-top" style="">
+                                    <div class="fancy-image" style="text-align:center">
+                                        <img ng-src="{{allDocs[0].image | uploadpath}}" class="img-responsive" alt="Renita" style="height:150px;width:auto">
+                                        <div class="fancy-imagetext" style="padding:10px 0">
+                                            <p style="margin:0; color:#41240d;font-size: 24px;font-weight: 700;">{{allDocs[0].name}}</p>
+                                            <p style="margin:0;color:#41240d">{{allDocs[0].specialist}}</p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="fancyimage-text text-center">
+                                        <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne.
+                                            Once active acne has been controlled, it is possible to focus on revising scars caused by acne.</p>
+                                    </div> -->
+                                </div>
+                                <div class="fancy-bottom">
+                                  <div ng-bind-html="allDocs[0].description">
+
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" ng-click="reAssemble(allDocs.length-1,true)" role="button">
+                      <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                    </a>
+                    <a class="right carousel-control" ng-click="reAssemble(1,true)" role="button" >
+                        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <!-- /.modal-body -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->

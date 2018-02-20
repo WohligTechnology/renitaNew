@@ -1,0 +1,67 @@
+{
+    "title": "Create SubCategory",
+    "jsonPage": "viewSubCategory",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "Category-Name",
+        "type": "selectFromTable",
+        "option":"single",
+        "tableRef": "category",
+        "placeholder": "Enter Category-Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "category/getAll"
+    },{
+        "name": "Sub-Category-Name",
+        "type": "text",
+        "tableRef": "subCatName",
+        "placeholder": "Enter Sub-Category-Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Description",
+        "type": "tinymceImage",
+        "tableRef": "subCatDescription",
+        "placeholder": "Enter Description",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },
+     {
+        "name": "Video Url",
+        "type": "text",
+        "tableRef": "video",
+        "placeholder": "Enter URL",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },
+    {
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewSubCategory'})"
+    }],
+
+    "apiCall": {
+        "url": "SubCategory/savedata"
+    }
+}

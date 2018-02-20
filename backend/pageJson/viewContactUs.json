@@ -1,0 +1,47 @@
+{
+    "title": "Contact us",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [
+        {
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Mobile",
+        "isSort": "",
+        "tableRef": "mobile"
+    },
+        {
+        "name": "Email",
+        "isSort": "",
+        "tableRef": "email"
+    }],
+    "action": [
+        {
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editContactUs",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "ContactUs/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete Tag?",
+        "api": "ContactUs/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "ContactUs/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createContactUs'})"
+}

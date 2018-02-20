@@ -1,0 +1,272 @@
+<footer>
+   <div class="footer-top" ng-controller="footerctrl">
+      <div class="container">
+
+         <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12">
+               <div class="footer-list">
+                  <ul class="padding0">
+                     <li ng-repeat="data in footer">
+                        <a ui-sref="skin({name:data.name,id:data._id})">
+{{data.name}}
+                                </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+               <div class="footer-list">
+                  <ul class="padding0">
+                     <li>
+                        <a ui-sref="about-us">
+                              ABOUT US
+                            </a>
+                     </li>
+                     <li>
+                        <a ui-sref="team">
+                                TEAM
+                              </a>
+                     </li>
+                     <li><a ui-sref="consultant">Consultant</a></li>
+                     <li><a ui-sref="before-after">Before &amp; After</a></li>
+                     <li><a ui-sref="testimonial">Testimonials</a></li>
+                     <li>
+                        <a ui-sref="blog">
+BLOG
+                                </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+               <div class="footer-list">
+                  <ul class="padding0">
+                     <li>
+                        <a ui-sref="clinic-policy">
+            Clinic Policy
+          </a>
+                     </li>
+                     <li>
+                        <a ui-sref="contact">
+          CONTACT US
+          </a>
+                     </li>
+
+
+                  </ul>
+               </div>
+
+               <!-- <div class="help-number">
+                        <span class="color-white">HEALTHLINE: 1800-1022-733</span>
+                    </div> -->
+            </div>
+
+
+            <div class="col-md-3 col-sm-3 col-xs-12  hidden-xs ">
+               <div class="subscribe">
+                  <span class="color-white">SUBSCRIBE TO OUR NEWSLETTER!</span>
+                  <form class="form-inline mt15" ng-submit="subscribe()" ng-if="!formComplete">
+                     <div class="form-group place-holder">
+                        <input type="email" class="form-control" id="exampleInputEmail2" ng-model="formData.email" required>
+                     </div>
+                     <button type="submit" class="btn btn-default mob-min-s">SUBSCRIBE</button>
+                  </form>
+                  <div ng-if="formComplete" class="color-white">Thank you for Subscribing.</div>
+                  <div ng-if="emailExist" class="color-white">Email Already Exist</div>
+               </div>
+               <div class="follow my-list mt15 display-inline">
+                  <span class="color-white">Follow us on</span>
+                  <ul class="padding0 color-base mt10">
+                     <li> <a href="https://www.facebook.com/Dr.RenitaRajanClinic/" target="_blank"> <i class="fa fa-facebook"></i></a></li>
+                     <li> <a href="https://plus.google.com/116418772137896039065" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                     <li> <a href="https://twitter.com/DrRenitaRajan" target="_blank">  <i class="fa fa-twitter"></i></a></li>
+                     <li> <a href="https://www.instagram.com/renderskinhair/?hl=en" target="_blank"> <i class="fa fa-instagram" ></i></a></li>
+                  </ul>
+               </div>
+               <div class="follow my-list mt15 display-inline follow-logo">
+                 <a href="https://www.realself.com/find/India/Dermatologist/Renita-Lourdhurajan" target="_blank">
+                 <img src="frontend/img/renita.png" class="img-responsive" alt="Renita"></a>
+                 
+               </div>
+
+            </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 hidden-sm visible-xs hidden-md">
+               
+            
+               <div class="follow my-list mt15 display-inline follow-logo">
+                 <a href="https://www.realself.com/find/India/Dermatologist/Renita-Lourdhurajan" target="_blank">
+                 <img src="frontend/img/renita.png" class="img-responsive" alt="Renita"></a>
+                 
+               </div>
+               <div class="subscribe">
+                  <span class="color-white">SUBSCRIBE TO OUR NEWSLETTER!</span>
+                  <form class="form-inline mt15" ng-submit="subscribe()" ng-if="!formComplete">
+                     <div class="form-group place-holder">
+                        <input type="email" class="form-control" id="exampleInputEmail2" ng-model="formData.email" required>
+                     </div>
+                     <button type="submit" class="btn btn-default mob-min-s">SUBSCRIBE</button>
+                  </form>
+                  <div ng-if="formComplete" class="color-white">Thank you for Subscribing.</div>
+                  <div ng-if="emailExist" class="color-white">Email Already Exist</div>
+               </div>
+   <div class="follow my-list mt15 display-inline">
+                  <span class="color-white">Follow us on</span>
+                  <ul class="padding0 color-base mt10">
+                     <li> <a href="https://www.facebook.com/Dr.RenitaRajanClinic/" target="_blank"> <i class="fa fa-facebook"></i></a></li>
+                     <li> <a href="https://plus.google.com/116418772137896039065" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                     <li> <a href="https://twitter.com/DrRenitaRajan" target="_blank">  <i class="fa fa-twitter"></i></a></li>
+                     <li> <a href="https://www.instagram.com/renderskinhair/?hl=en" target="_blank"> <i class="fa fa-instagram" ></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+
+
+         <div class="book-tab" ng-click="bookTab=!bookTab;" ng-class="{'openbook hidden': bookTab}" touch-down>
+            <div class="book_app text-center">
+               <!-- BOOK AN APPOINTEMENT -->
+               CONTACT US
+               <i class="fa fa-minus" aria-hidden="true"></i>
+               <i class="fa fa-plus" ng-if="!bookTab" aria-hidden="true"></i>
+            </div>
+         </div>
+
+         <div class="book-tab bk-bot" ng-class="{'openbook': bookTab}" ng-init="bookTab = false">
+            <div class="book_app text-center" ng-click="bookTab=!bookTab;">
+               <!-- BOOK AN APPOINTEMENT -->
+               CONTACT US
+               <i class="fa fa-minus" ng-if="bookTab" aria-hidden="true"></i>
+               <i class="fa fa-plus" ng-if="!bookTab" aria-hidden="true"></i>
+            </div>
+            <div class="bookForm" ng-if="bookTab">
+               <form name="user" ng-submit="submitForm(contactForm)" class="super-form">
+                  <div>
+                     <div class="custom-form">
+                        <div class="form-group place-holder">
+                           <input type="text" class="form-control" name="name" placeholder="Name" ng-model="contactForm.name" required>
+                           <!-- <div class="error-msg" ng-show="user.name.$error.required && user.name.$touched">Please Enter Your Name</div> -->
+                        </div>
+                        <div class="form-group place-holder">
+                           <input type="text" class="form-control" name="age" placeholder="Age" ng-model="contactForm.age" only-digits required maxlength="2">
+                           <!-- <div class="error-msg" ng-show="user.age.$error.required && user.age.$touched">Please Enter Your Age</div> -->
+                        </div>
+                        <div class="form-group place-holder">
+                           <!-- <div class="gender"> -->
+                           <!-- <label for="">Gender</label> -->
+                           <!-- <div class="gender-mar">
+                                 <input type="radio" name="gender" value="Male" ng-model="contactForm.gender" checked required>Male
+                                 <input type="radio" name="gender" value="Female" ng-model="contactForm.gender" required> Female
+                              </div> -->
+                           <input type="text" class="form-control" name="gender" placeholder="Gender" ng-model="contactForm.gender" required>
+
+
+
+                           <!-- </div> -->
+                        </div>
+                        <div class="form-group place-holder">
+                           <input type="text" class="form-control" name="telephone" placeholder="Mobile Number" ng-model="contactForm.mobile" only-digits required minlength="10" maxlength="10">
+                           <!-- <div class="error-msg" ng-show="user.telephone.$error.required && user.telephone.$touched">Please Enter Your Telephone Number</div> -->
+                        </div>
+                        <div class="form-group place-holder">
+                           <input type="text" class="form-control" name="alternateContact" placeholder="Alternate Contact Number" ng-model="contactForm.alternateMobile" only-digits  minlength="10" maxlength="10">
+                           <!-- <div class="error-msg" ng-show="user.alternateContact.$error.required && user.alternateContact.$touched">Please Enter Your Alternate Contact Number</div> -->
+
+                        </div>
+                        <div class="form-group place-holder">
+                           <input type="email" class="form-control" name="email" placeholder="Email" ng-model="contactForm.email" required>
+                           <!-- <div class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email</div> -->
+                           <div>{{message}}</div>
+                        </div>
+                        <div class="form-group place-holder">
+                          <input type="text" class="form-control" id="country" ng-model="contactForm.country" name="country"  placeholder="Enter Country" aplha-Only required>
+                        </div>
+                        <div class="form-group place-holder">
+                           <input type="text" class="form-control" name="city" placeholder="Enter City" ng-model="contactForm.city" required>
+                           <!-- <div class="error-msg" ng-show="user.city.$error.required && user.city.$touched">Please Enter Your City</div> -->
+
+
+
+                        </div>
+                        <div class="form-group place-holder">
+                           <!-- <select name="categorydata" class="form-control" ng-model="contactForm.country" required>
+                              <option ng-selected="true" value="">Select Country</option>
+                              <option value="in">INDIA</option>
+                              <option value="usa">USA</option>
+                           </select> -->
+                        </div>
+                        <div class="form-group place-holder">
+                           <div class="gender">
+                              <label for="">Subject</label>
+                              <div class="label-color">
+                                 <div class="custom-radio">
+                                    <!-- <input type="radio" name="appointment" value="appointment" required ng-model="contactForm.appointment">Request for appointment -->
+                                    <input type="radio" id="option1" name="radio1" ng-model="contactForm.subject" value="appointment" required>
+                                    <label for="option1"><span></span>Request for appointment</label>
+                                 </div>
+                                 <div class="custom-radio">
+                                    <!-- <input type="radio" name="appointment" value="feedback" required ng-model="contactForm.feedback">-->
+                                    <input type="radio" id="option2" name="radio1" ng-model="contactForm.subject" value="feedback" required>
+                                    <label for="option2"><span></span>Feedback/Suggestion</label>
+                                 </div>
+                                 <div class="custom-radio">
+                                    <!-- <input type="radio" name="appointment" value="complaint" required ng-model="contactForm.complaint"></br> -->
+                                    <input type="radio" id="option3" name="radio1" value="complaint" required ng-model="contactForm.subject">
+                                    <label for="option3"><span></span>Complaint</label>
+                                 </div>
+                              </div>
+
+
+
+
+
+                           </div>
+                        </div>
+                        <div class="form-group place-holder">
+                          <div class="gender">
+                             <label for="">Message</label>
+                           <textarea class="form-control" rows="5" cols="50" name="message" ng-model="contactForm.message" required></textarea>
+                         </div>
+                           <!-- <div class="error-msg" ng-show="user.message.$error.required && user.message.$touched">Plaese Enter Your Message</div> -->
+
+
+                        </div>
+                        <div class="form-group place-holder">
+                           <div class="text-center button-sub">
+                              <button class="btn  btn-outline uppercase btn-second" type="submit">SUBMIT</button>
+                           </div>
+
+
+                        </div>
+                     </div>
+                  </div>
+               </form>
+               <!-- <h3 ng-if="bookingFormComplete">Thank you.</h3> -->
+            </div>
+
+         </div>
+
+
+      </div>
+   </div>
+
+
+   <div class="footer-bottom">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 img-c">
+               <p>Copyright &copy; {{template.year}}. Dr. Renita Rajan</p>
+                 
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+               <div class="pull-right img-c fl-no">
+                  <p>designed by <a href="http://ting.in/" target="_blank" class="color-base">Ting</a>.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+
+</footer>

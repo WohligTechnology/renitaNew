@@ -1,0 +1,48 @@
+{
+    "title": "Before After",
+    "desciption": "",
+    "pageType": "view",
+    "sortable":"BeforeAfter/sort",
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "type": "text",
+        "tableRef": "name"
+    }, {
+        "name": "status",
+        "isSort": "",
+        "type": "text",
+        "tableRef": "status"
+    },{
+        "name": "Video",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "video"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editBeforeAfter",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "BeforeAfter/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete BeforeAfter",
+        "content": "Are you sure you want to delete BeforeAfter?",
+        "api": "BeforeAfter/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "BeforeAfter/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createBeforeAfter'})"
+}

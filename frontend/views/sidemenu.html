@@ -1,0 +1,62 @@
+<section class="renitamenu" ng-controller="headerctrl">
+  <div class="menu-side">
+    <div class="container">
+      <div class="row">
+        <div class="headerpos">
+          <div class="navbar-header {{buttonpos}}">
+            <button type="button" class="btn-hide inline-block" ng-click="getNav();">
+              <span class="icon-bar one"></span>
+              <span class="icon-bar two"></span>
+              <span class="icon-bar three"></span>
+            </button>
+            <a ui-sref="home"><img src="frontend/img/logo.jpg" alt="Renita" class="home-logo"></a>
+            <!-- <a ui-sref="home"><img src="img/logo.png" alt="" class="em-logo"></a> -->
+            <!-- <a ui-sref="home"><img src="img/Logo_pantone value.png" alt="" class="em-logo"></a> -->
+          </div>
+          <div class="sidemenu {{getslide}}">
+            <div class="nav-list">
+
+
+              <!-- <h4 class="menu-title inline-block">Dr. RENITA RAJAN</h4> -->
+              <div class="sdm-logo">
+                <div class="cross inline-block" ng-click="getNav();">
+                  <i class="fa fa-times"></i>
+                </div>
+                <a ui-sref="home"><img src="frontend/img/Render Logo.png" alt="Renita" > </a>
+                <!-- <a ui-sref="home"><img src="img/logo.png" alt="logo" width="150"> </a> -->
+              </div>
+              <div class="homeborder">
+                <ul class="myclass">
+                  <li><a ui-sref="home">Home</a></li>
+                </ul>
+              </div>
+              <div class="homeborder">
+                <ul class="list-unstyled">
+                  <li ng-repeat="data in categories"><a ui-sref="skin({name:data.name,id:data._id})">{{data.name}}
+                    </a>
+                    <!--<ul>
+                      <li ng-repeat="data in categories">
+                        <a ui-sref="skin({name:data.name,id:data._id})">{{data.name}}
+                    </a>
+                      </li>
+                    </ul>-->
+                    </li>
+                </ul>
+              </div>
+              <ul class="list-unstyled remaining">
+                <li><a ui-sref="about-us">About Us</a></li>
+                <li><a ui-sref="team">Team</a></li>
+                <li><a ui-sref="consultant">Consultant</a></li>
+                <li><a ui-sref="before-after">Before &amp; After</a></li>
+                <li><a ui-sref="testimonial">Testimonials</a></li>
+                <li><a ui-sref="blog">Blog</a></li>
+                <li><a ui-sref="clinic-policy">Clinic Policy</a></li>
+                <li><a ui-sref="contact">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

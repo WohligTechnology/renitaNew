@@ -1,0 +1,111 @@
+{
+    "title": "Create ContactUs",
+    "jsonPage": "viewContactUs",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [
+        {
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },
+     {
+        "name": "Age",
+        "type": "text",
+        "tableRef": "age",
+        "placeholder": "Enter age",
+        "id": "input1",
+        "url": ""
+    },
+    {
+        "name": "Gender",
+        "type": "text",
+        "tableRef": "gender",
+        "placeholder": "Enter gender",
+        "id": "input1",
+        "url": ""
+    },
+     {
+        "name": "Mobile",
+        "type": "text",
+        "tableRef": "mobile",
+        "placeholder": "Enter mobile",
+        "id": "input1",
+        "validation": ["required", "", ""],
+        "url": ""
+    },
+    {
+        "name": "AlternateMobile",
+        "type": "text",
+        "tableRef": "alternateMobile",
+        "placeholder": "Enter alternateMobile",
+        "id": "input1",
+        "url": ""
+    },
+    {
+        "name": "Email",
+        "type": "email",
+        "tableRef": "email",
+        "placeholder": "Enter email",
+        "id": "input1",
+        "url": ""
+    },
+     {
+        "name": "City",
+        "type": "text",
+        "tableRef": "city",
+        "placeholder": "Enter city",
+        "id": "input1",
+        "url": ""
+    },
+       {
+        "name": "Country",
+        "type": "text",
+        "tableRef": "country",
+        "placeholder": "Enter country",
+        "id": "input1",
+        "url": ""
+    },
+       {
+        "name": "Subject",
+        "type": "select",
+        "tableRef": "subject",
+        "placeholder": "Enter subject",
+        "id": "input1",
+        "url": [{
+            "value": "appointment",
+            "name": "Appointment"
+        }, {
+            "value": "feedback",
+            "name": "Feedback"
+        },
+        {
+            "value": "complaint",
+            "name": "Complaint" 
+        }]
+    },
+       {
+        "name": "Message",
+        "type": "text",
+        "tableRef": "message",
+        "placeholder": "Enter message",
+        "id": "input1",
+        "url": ""
+    }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewContactUs'})"
+    }],
+
+    "apiCall": {
+        "url": "ContactUs/savedata"
+    }
+}

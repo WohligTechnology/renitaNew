@@ -1,0 +1,52 @@
+{
+    "title": "View Blogs",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image"
+    },{
+        "name": "Video",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "video"
+    },{
+        "name": "Status",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editBlog",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "blog/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Blog",
+        "content": "Are you sure you want to delete Blog?",
+        "api": "blog/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Blog/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createBlog'})"
+}

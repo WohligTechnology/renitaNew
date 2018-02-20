@@ -1,0 +1,66 @@
+{
+    "title": "Create Testimonial",
+    "jsonPage": "viewTestimonial",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Image",
+        "type": "image",
+        "size": "429 X 401",
+        "tableRef": "image",
+        "option": "single",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Video Url",
+        "type": "text",
+        "tableRef": "video",
+        "placeholder": "Enter URL",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Testimonial",
+        "type": "textarea",
+        "tableRef": "description",
+        "placeholder": "Enter Name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewTestimonial'})"
+    }],
+
+    "apiCall": {
+        "url": "Testimonial/savedata"
+    }
+}

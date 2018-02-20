@@ -1,0 +1,41 @@
+{
+    "title": "Tags",
+    "desciption": "",
+    "pageType": "view",
+    "sortable":"Tags/sort",
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editTags",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "Tags/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete Tag?",
+        "api": "Tags/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Tags/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createTags'})"
+}

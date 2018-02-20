@@ -1,0 +1,27 @@
+{
+    "title": "Create Media",
+    "jsonPage": "viewMedia",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "single",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewMedia'})"
+    }],
+
+    "apiCall": {
+        "url": "Media/savedata"
+    }
+}

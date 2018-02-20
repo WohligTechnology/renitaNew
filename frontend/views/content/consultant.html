@@ -1,0 +1,106 @@
+<section scrolldown>
+    <section>
+        <div class="head-top hidden-xs">
+            <img ng-src="{{doctorHeader.image|uploadpath}}" alt="{{doctorHeader.name}}" class="img-responsive give-height">
+            <!-- <img ng-src="img/our-team.png" alt="" class="img-responsive"> -->
+            <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+                <img src="frontend/img/scroll-down.png" alt="Renita">
+            </div>
+        </div>
+    </section>
+    <section class="hidden-lg hidden-md hidden-sm">
+        <div class="head-top">
+            <img ng-src="{{doctorHeader.image1|uploadpath}}" alt="{{doctorHeader.name}}" class="img-responsive w100 " auto-heightfixed>
+            <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+                <img src="frontend/img/scroll-down.png" alt="Renita">
+            </div>
+        </div>
+    </section>
+    <section class="doctorpg second">
+        <div class="container">
+            <div class="row">
+                <div class="data" ng-bind-html="doctorHeader.description">
+                    <!-- <h1 class="font-bold color-primary text-up mt20">doctor</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text.</p> -->
+                </div>
+                <!-- <div class="doctor-slider">
+                    <flex-slider flex-slide="item in doctor track by $index" prev-text="" next-text="" animation="slide" item-width="292" item-margin="0">
+                        <li>
+
+                            <a ng-click=openModal($index);>
+                                <div class="doctor-box text-center ">
+                                    <div class="img-box">
+
+                                        <img ng-src="{{item.image|uploadpath}}" alt="" class="img-responsive">
+
+                                    </div>
+                                    <div class="docs-detail">
+                                        <div class="name">
+                                            <h4>{{item.name}}</h4>
+                                        </div>
+                                        <div class="spl">
+                                            <span>{{item.specialist}}</span>
+                                        </div>
+                                        <div class="descp">
+                                            <div ng-bind-html="item.description" class="text-justify scroll-min"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </flex-slider>
+                </div> -->
+
+                <!-- for now only without flexslider-->
+
+                <div class="doctor-slider">
+                  
+                    <!-- <flex-slider flex-slide="item in doctor track by $index" prev-text="" next-text="" animation="slide" item-width="292" item-margin="0">
+                        <li>
+
+                            <a ng-click=openModal($index);> -->
+                                <div class="doctor-box text-center " ng-click=openModal($index);>
+                                    <div class="img-box" ng-click=openModal($index);>
+
+                                        <img ng-src="{{doctor[0].image|uploadpath}}" alt="{{doctor[0].name}}" class="img-responsive">
+
+                                    </div>
+                                    <div class="docs-detail">
+                                        <div class="name">
+                                            <h4>{{doctor[0].name}}</h4>
+                                        </div>
+                                        <div class="spl">
+                                            <span>{{doctor[0].specialist}}</span>
+                                        </div>
+                                        <div class="descp">
+                                            <div ng-bind-html="doctor[0].description" class="text-justify scroll-min"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- </a>
+                        </li>
+                    </flex-slider> -->
+                </div>
+
+                <!-- for now only without flexslider-->
+
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mt30 pb30">
+                        <div class="text-center">
+                            <h4 class="color-primary font-semi">ALSO READ</h4>
+                            <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="team">ABOUT US</button>
+                            <button type="button" name="button" class="outline-btn btn-padding2 f18 gulp-m mob-mtp" ui-sref="doctor">TEAM</button>
+                            <button type="button" name="button" class="outline-btn btn-padding2 f18" ui-sref="testimonial">TESTIMONIALS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

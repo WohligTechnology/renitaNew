@@ -1,0 +1,149 @@
+<section scrolldown>
+    <section>
+        <div class="head-top hidden-xs">
+            <img src="{{headerBefore.image|uploadpath}}" alt="{{headerBefore.name}}" class="img-responsive give-height">
+            <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+                <img src="frontend/img/scroll-down.png" alt="Renita">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="head-top hidden-lg hidden-md hidden-sm">
+            <img src="{{headerBefore.image1|uploadpath}}" alt="{{headerBefore.name}}" class="img-responsive" auto-heightfixed>
+            <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+                <img src="frontend/img/scroll-down.png" alt="Renita">
+            </div>
+        </div>
+    </section>
+    <div id="top-scroll"></div>
+    <section class="mt50 second">
+           <div class="hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="data">
+                        <p ng-bind-html="headerBefore.description">
+                            <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                        dummy text. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt20">
+                <div class="col-md-3">
+                    <div class="tab-list3">
+                        <ul class="padding0 margin0">
+                          <li ng-class="{'active-tabs':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in before" class="ng-scope active-tab" style=""><a href="">{{data.name}}</a></li>
+                            <!-- <li class="{{classa}}" ng-click="tabchanges('acne',1)"><a href="">Acne Treatment</a></li>
+                        <li class="{{classb}}" ng-click="tabchanges('corr',2)"><a href="">Acne scar correction</a></li>
+                        <li class="{{classc}}" ng-click="tabchanges('scar',3)"><a href="">Scar revision results</a></li>
+                        <li class="{{classd}}" ng-click="tabchanges('cos',4)"><a href="">Cosmetic Mole excision</a></li>
+                        <li class="{{classe}}" ng-click="tabchanges('bot',5)"><a href="">BOTOX</a></li>
+                        <li class="{{classf}}" ng-click="tabchanges('fill',6)"><a href="">Fillers</a></li>
+                        <li class="{{classg}}" ng-click="tabchanges('hair',7)"><a href="">Hair transplantation</a></li>
+                        <li class="{{classh}}" ng-click="tabchanges('pigment',8)"><a href="">Pigment removal treatment</a></li>
+                        <li class="{{classi}}" ng-click="tabchanges('keloid',9)"><a href="">Keloid treatment</a></li>
+                        <li class="{{classj}}" ng-click="tabchanges('grow',10)"><a href="">Scarless excision of small skin growth (DPN)</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="tabs">
+                        <div class="first">
+                            <div class="data-title3">
+                                <h4 class=" font-semi">{{subCategoryBefore.name}}</h4>
+                            </div>
+                            <div ng-if="subCategoryBefore.description.length==0">
+                                <h1>No Data Found</h1>
+                            </div>
+                            <div class="data-main mt15" ng-bind-html="subCategoryBefore.description">
+
+                            </div>
+                            <div ng-if="subCategoryBefore.video">
+                              <iframe  ng-src="{{'https://www.youtube.com/embed/'+ subCategoryBefore.video + '?autoplay=0'|trusted}}" frameborder="0" allowfullscreen width="100%"  class="blog-iframe iframe-before-after" ></iframe>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="first" ng-if="tabs=='corr'">
+                    </div>
+                    <div class="first" ng-if="tabs=='scar'">
+                    </div>
+                    <div class="first" ng-if="tabs=='cos'">
+                    </div>
+                    <div class="first" ng-if="tabs=='bot'">
+                    </div>
+                    <div class="first" ng-if="tabs=='fill'">
+                    </div>
+                    <div class="first" ng-if="tabs=='hair'">
+                    </div>
+                    <div class="first" ng-if="tabs=='pigment'">
+                    </div>
+                    <div class="first" ng-if="tabs=='keloid'">
+                    </div>
+                    <div class="first" ng-if="tabs=='grow'">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+          <div class="hidden-lg hidden-md hidden-sm">
+      <div class="container">
+        <div class="row">
+          <div class="mobile-ui">
+            <flex-slider flex-slide="item in before track by $index" animation="slide" item-width="150" item-margin="10" animationloop="true"
+              move="2">
+       <li ng-style="item.style"  ng-class="{'active-tabs':data.activetab}" ng-click="tabActive(data._id,$index)" ng-repeat="data in before"><a href="">{{data.name}}</a></li>
+            </flex-slider>
+            <!-- <flex-slider flex-slide="item in category track by $index" animation="slide" item-width="240" item-margin="10" animationloop="true" move="2">
+          <li class="text-center">
+                  <a href="" class="{{item.class}}"  ng-click="tabchange(item.tab,$index)">{{item.subCatName}}</a>
+                </li>
+            </flex-slider> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="data-center">
+            <div class="tabs">
+                        <div class="first">
+                            <div class="data-title3">
+                                <h4 class="color-after font-semi">{{subCategoryBefore.name}}</h4>
+                            </div>
+                            <div ng-if="subCategoryBefore.description.length==0">
+                                <h1>No Data Found</h1>
+                            </div>
+                            <div class="data-main mt15 tempImage" ng-bind-html="subCategoryBefore.description">
+                                <!-- <p>Medical management, together with basic cosmetic treatments can often work wonders in treating acne! A simple, but intensive initial regimen followed up with a regular home program are often adequate to manage acne. Once active
+                                acne has been controlled, it is possible to focus on revising scars caused by acne</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="first" ng-if="tabs=='corr'">
+                    </div>
+                    <div class="first" ng-if="tabs=='scar'">
+                    </div>
+                    <div class="first" ng-if="tabs=='cos'">
+                    </div>
+                    <div class="first" ng-if="tabs=='bot'">
+                    </div>
+                    <div class="first" ng-if="tabs=='fill'">
+                    </div>
+                    <div class="first" ng-if="tabs=='hair'">
+                    </div>
+                    <div class="first" ng-if="tabs=='pigment'">
+                    </div>
+                    <div class="first" ng-if="tabs=='keloid'">
+                    </div>
+                    <div class="first" ng-if="tabs=='grow'">
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="frontend/img/top-scroll.png" alt="Renita">
+    </div>
+</section>

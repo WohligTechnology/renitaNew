@@ -1,0 +1,46 @@
+{
+    "title": "Popular Posts",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image"
+    }, {
+        "name": "Date",
+        "type": "date",
+        "isSort": "",
+        "tableRef": "date"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editPopularPost",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "PopularPost/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete PopularPost",
+        "content": "Are you sure you want to delete PopularPost?",
+        "api": "PopularPost/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "PopularPost/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createPopularPost'})"
+}

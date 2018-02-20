@@ -1,0 +1,28 @@
+{
+    "title": "Subscribe",
+    "desciption": "",
+    "pageType": "view",
+    "fields": [{
+        "name": "Email",
+        "isSort": "",
+        "tableRef": "email"
+    }],
+    "action": [ {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Tag",
+        "content": "Are you sure you want to delete Tag?",
+        "api": "Subscribe/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "Subscribe/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createSubscribe'})"
+}

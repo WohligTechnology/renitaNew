@@ -1,0 +1,159 @@
+<header>
+   <nav class="navbar navbar-default navbar-fixed-top sticky-header" scroll>
+      <div class="container" ng-controller="headerctrl">
+         <div class="navbar-header">
+            <!-- <a class="navbar-brand" ui-sref="home"><img src="img/logo.png" alt="logo" width="150"> </a> -->
+            <a class="navbar-brand" ui-sref="home"><img src="frontend/img/logo3.png" alt="logo" class="render"> </a>
+         </div>
+
+         <div class="collapse navbar-collapse" id="nav-collapse">
+            <div ng-include="template.menu" class="template menu"></div>
+            <!-- search image -->
+            <div class="serach" ng-click="gotoSearch();">
+               <img src="frontend/img/search.png" alt="Renita">
+            </div>
+            <div class="dropdown before-triangle" ng-if="searchExp">
+
+
+
+               <ui-select ng-model="item.selected" ng-change="DoSearch(item.selected.name,item.selected._id,item.selected.category,item.selected.subCatName1);" style="width: 100%;" title="Search cat">
+                  <ui-select-match class="serach-box" placeholder="Search...">{{$select.selected.subCatName}}</ui-select-match>
+                  <ui-select-choices repeat="item in mainSeracharr | filter: {subCatName :$select.search} |limitTo:6">
+                     <div>
+                        <span ng-bind-html="item.subCatName"></span>
+
+                     </div>
+
+                  </ui-select-choices>
+               </ui-select>
+
+               <!-- <ui-select ng-model="item.selected" ng-change="DoSearch(item.selected.name,item.selected._id);" style="width: 100%;" title="Search cat">
+                <ui-select-match class="serach-box" placeholder="Search...">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="item in navigation | filter: {name:$select.search}">
+
+
+                        <div>
+                            <span ng-bind-html="item.name"></span>
+
+                        </div>
+
+                </ui-select-choices>
+            </ui-select> -->
+
+            </div>
+            <!--End of  search image -->
+         </div>
+
+
+         <!-- UI with ui-select -->
+
+         <!-- <ui-select ng-model="movie.selected" ng-change="DoSearch(movie.selected.name,movie.selected._id)" style="width: 100%;" title="Search Movie" class="search-drop">
+             <ui-select-match placeholder="Search for a Movie">{{$select.selected.name}}</ui-select-match>
+             <ui-select-choices repeat="movie in allMovieName | filter: {name:$select.search}">
+                 <div class="movi-src-rslt">
+                     <div class="display-inline w60">
+
+                         <img ng-src="{{movie.smallImage|uploadpath}}" alt="" ng-if="movie.releaseType=='Past'">
+                         <img ng-src="{{movie.recentSmall|uploadpath}}" alt="" ng-if="movie.releaseType=='Recent'">
+                         <img ng-src="{{movie.upcomingSmall|uploadpath}}" alt="" ng-if="movie.releaseType=='Upcoming'">
+                     </div>
+                     <div class="display-inline ml15">
+                         <span ng-bind-html="movie.name | highlight: $select.search"></span>
+                         <span ng-if="movie.year">({{movie.year}})</span>
+                     </div>
+                 </div>
+             </ui-select-choices>
+         </ui-select> -->
+
+         <!-- <ui-select ng-model="selected.value" class="custom-select">
+            <ui-select-match>
+               <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="item in navigation | filter : $select.search track by item._id">
+               <span ng-bind="item.name"></span>
+            </ui-select-choices>
+         </ui-select> -->
+
+         <!-- <ui-select ng-model="selected.value" class="custom-select">
+            <ui-select-match>
+               <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+               <span ng-bind="item.name" ng-click="myfun(item);"></span>
+            </ui-select-choices>
+         </ui-select> -->
+
+         <!-- End of UI with ui-select -->
+
+
+         <!-- <div class="searchbox">
+              <input type="text" placeholder="Search">
+            </div> -->
+
+      </div>
+   </nav>
+</header>
+<!-- <header>
+   <nav class="navbar navbar-default navbar-fixed-top sticky-header" scroll>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home"><img src="img/logo.png" alt="logo" width="150"> </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a ui-sref="skin">Skin</a>
+              <div class="borpos borskin"></div>
+            </li>
+            <li>
+              <a>Hair &amp; Scalp</a>
+              <div class="borpos borhair"></div>
+              <div class="submenu">
+                <ul class="dropdown-menu">
+                  <li>
+                    <a>Hair Loss</a>
+                  </li>
+                  <li>
+                    <a>Dandruff</a>
+                  </li>
+                  <li>
+                    <a>Weathered Hair</a>
+                  </li>
+                  <li>
+                    <a>Hair Maintenance</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a>Body</a>
+              <div class="borpos borbody"></div>
+            </li>
+            <li>
+              <a>Men</a>
+              <div class="borpos bormen"></div>
+            </li>
+            <li>
+              <a>Treatments</a>
+              <div class="borpos bortreat"></div>
+            </li>
+            <li>
+              <a>Mummy Derm</a>
+              <div class="borpos borderm"></div>
+            </li>
+            <li>
+              <a ui-sref="vitiligo">Vitiligo</a>
+              <div class="borpos borviti"></div>
+            </li>
+          </ul>
+        </div>
+    </div>
+</nav>
+</header> -->

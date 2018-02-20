@@ -1,0 +1,52 @@
+{
+    "title": "All Slider",
+    "desciption": "",
+    "pageType": "view",
+    "sortable": "homeslider/sort",
+    "fields": [{
+        "name": "Background Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image1"
+    }, {
+        "name": "Front Image",
+        "type": "image",
+        "isSort": "",
+        "tableRef": "image2"
+    }, {
+        "name": "URL",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "url.name"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editSlider",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "homeslider/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete Slider",
+        "content": "Are you sure you want to delete Slider?",
+        "api": "homeslider/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "homeslider/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createSlider'})"
+}

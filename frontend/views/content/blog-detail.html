@@ -1,0 +1,199 @@
+<section scrolldown>
+   <section>
+      <div class="head-top hidden-xs" ng-if="blogHeader.image">
+         <img src="img/blog.jpg" alt="Renita blog" class="img-responsive" ng-if="!blogHeader.image">
+         <img ng-src="{{blogHeader.image|uploadpath}}" alt="{{blogHeader.name}}" class="img-responsive give-height" ng-if="blogHeader.image">
+         <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+            <img src="frontend/img/scroll-down.png" alt="Renita">
+         </div>
+      </div>
+      <!-- <div class="head-top hidden-xs" ng-if="!blogHeader.image">
+          <iframe width="640" height="360" src="https://www.youtube.com/embed/8unGk1Epz10" frameborder="0" allowfullscreen  style="
+           width: 100%;
+           height: 100vh;">
+
+           </iframe>
+        </div> -->
+   </section>
+   <section class="hidden-lg hidden-md hidden-sm">
+      <div class="head-top" ng-if="blogHeader.image">
+         <img ng-src="{{blogHeader.image1|uploadpath}}" alt="{{blogHeader.name}}" class="img-responsive w100 " auto-heightfixed ng-if="blogHeader.image1">
+         <div class="mouse-scrolldown color-white text-center" ng-click="scrollDown();">
+            <img src="frontend/img/scroll-down.png" alt="Renita">
+         </div>
+      </div>
+      <!-- <div class="head-top" ng-if="!blogHeader.image">
+           <iframe width="640" height="360" src="https://www.youtube.com/embed/8unGk1Epz10" frameborder="0" allowfullscreen  style="
+           width: 100%;
+           height: 100vh;">
+             </iframe>
+        </div> -->
+   </section>
+   <div id="top-scroll"></div>
+   <section class="mt50 second">
+      <div class="container">
+         <div class="row mt20">
+            <div class="col-md-8">
+               <div class="blog-left-side">
+                  <div class="blog-img" ng-if="blog.blog.image && !blog.blog.video">
+                     <img ng-src="{{blog.blog.image|serverimage}}" alt="{{blog.blog.name}}" class="img-responsive">
+                  </div>
+
+                  <div class="blog-img" ng-if="blog.blog.video">
+                     <iframe ng-src="{{'https://www.youtube.com/embed/'+ blog.blog.video + '?autoplay=0'|trusted}}" width="100%" frameborder="0" allowfullscreen></iframe>
+                  </div>
+
+                  <div class="blog-title">
+                     <h1 class="color-primary font-bold text-up">{{blog.blog.name}}</h1>
+                  </div>
+                  <div class="blog-date">
+                     <span class="color-base">{{blog.blog.date|date:'fullDate'}}</span>
+                  </div>
+                  <!-- <div class="blog-content mt20">
+                        <p>We laugh, we smile, we yap. we chat, we sip, we lick, we pout, we kiss!</p>
+                        <p>Our lips are pretty much among the heavy duty organs we have - pausing to rest only when we wind down for the night.</p>
+                        <p>Some of us pamper our lips, while some abuse them - by smoking, picking or chewing the lips.</p>
+                        <p>A person's lips can be a huge enhancement to his / her features, and it is no wonder that lip balms and lip colors are huge in the cosmetic industry.</p>
+                        <p>With all this hype, do you know what it really takes to get and maintain healthy, luscious and alluring lips?</p>
+                    </div> -->
+                  <div ng-bind-html="blog.blog.description">
+                  </div>
+                  <!-- <div class="blog-img">
+                        <img src="img/b2.jpg" alt="Dr Renita rajan" class="img-responsive">
+                    </div>
+                    <div class="blog-img">
+                        <img src="img/b3.jpg" alt="Dr Renita rajan" class="img-responsive">
+                    </div>
+                    <div class="blog-content">
+                        <p>Not happy with your lips? Do not worry, let us help you fix them!
+                        </p>
+                    </div>
+                    <div class="blog-img">
+                        <img src="img/b4.jpg" alt="Dr Renita rajan" class="img-responsive">
+                    </div> -->
+               </div>
+
+
+
+               <div class="blog-share float-right my-list mt15">
+                  <ul>
+                     <li>
+
+                        <div class="social-icon display-inline">
+                          <a  ng-href="https://www.facebook.com/sharer/sharer.php?u={{myUrl|urlEncode}}" target="_blank">
+                           <img src="img/fb.png" alt="Renita">
+                           </a>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="social-icon display-inline">
+                          <a ng-href="https://twitter.com/intent/tweet?url={{myUrl|urlEncode}}" target="_blank">
+                           <img src="img/twitt.png" alt="Renita">
+                           </a>
+                        </div>
+                     </li>
+                     <li>
+
+                        <div class="social-icon display-inline">
+                          <a ng-href="https://plus.google.com/share?url={{myUrl|urlEncode}}" target="_blank">
+                           <img src="img/google.png" alt="Renita">
+                         </a>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="social-icon display-inline">
+
+                          <!-- <a target="_blank" title="Share with Gmail" href="https://mail.google.com/mail/?view=cm&su=.Net Bug Buster&to&body=http://dotnetbugbuster.byethost7.com/ <br>.Net Bug Buster is my personal blog where i can post ASP.Net, C#, Linq, Kentico, Sql Server, MVC and Azure related articles &scc=1<mpl=default<mplcache=2&emr=1&osid=1#identifier">
+                          <img src="http://findicons.com/files/icons/820/simply_google/64/google_gmail.png" alt="gmail" /></a> -->
+
+
+
+
+
+
+
+                          <a ng-href="https://mail.google.com/mail/?view=cm&su=Dr. Renita Rajan&to&body={{myUrl|urlEncode}}" target="_blank" title="Share with Gmail">
+                           <img src="img/mail.png" alt="Renita">
+                           </a>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="clearfix"></div>
+               <div class="blog-pagination mt20">
+                  <div class="float-left">
+                     <button type="button" name="button" class="text-up outline-btn btn-padding">Previous Post</button>
+                  </div>
+                  <div class="float-right">
+                     <button type="button" name="button" class="text-up outline-btn btn-padding">Next Post</button>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+               <div class="related-blog mt30 pb60 pointer" ng-if="blog.related">
+                  <h3 class="color-base font-bold text-up">related Post</h3>
+                  <div class="row">
+                     <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="related in blog.related" ui-sref="blog-detail({'id':related._id})">
+                        <div class="related-box text-center">
+                           <img src="{{related.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
+                           <span class="font-bold text-up">{{related.name}}</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="blog-right-side">
+                  <div class="blog-search">
+                     <div class="input-group">
+                        <input type="text" class="form-control" ng-model="searchText" placeholder="Search">
+                        <span class="input-group-btn">
+                           <button class="btn search-btn search" type="button"><i class="fa fa-search"></i></button>
+                         </span>
+                     </div>
+                  </div>
+                  <div class="blog-popular-tag mt30">
+                     <h4 class="color-base text-up font-bold">Popular post</h4>
+                     <div ng-if="popular.length === 0">
+                        <h4 class="text-center">{{popularmsg}}</h4>
+                     </div>
+                     <div class="row mt20 pointer" ng-repeat="item in popular | filter:searchText" ui-sref="blog-detail({'id':item._id})" >
+                        <div class="col-md-3 col-xs-3">
+                           <div class="p-img-box">
+                              <img ng-src="{{item.image|serverimage}}" alt="Dr Renita Rajan" class="img-responsive">
+                           </div>
+                        </div>
+                        <div class="col-md-9 padding0 border-btm col-xs-9">
+                           <div class="blog-p-title">
+                              <h5 class="text-up color-base margin0 font-bold">{{item.name}}</h5>
+                           </div>
+                           <div class="blog-p-date">
+                              <span class="color-base f12">{{item.date|date:'fullDate'}}</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- ======tags=============== -->
+                  <!-- <div class="blog-popular-tag mt30">
+                     <h4 class="color-base text-up font-bold">tags</h4>
+                     <div ng-if="blog.blog.tags.length === 0">
+                        <h4 class="text-center">{{tagmsg}}</h4>
+                     </div>
+                     <div class="all-tags my-list mt20">
+                        <ul class="padding0 font-ralway text-up color-base">
+                           <li ng-repeat="tag in blog.blog.tags" ui-sref="blog({id:tag._id})">
+                              <span>{{tag.name}}</span>
+                           </li>
+                        </ul>
+                        <div class="view-more mt30" ng-if="blog.blog.tags>20">
+                           <span class="text-up font-ralway">view more</span>
+                        </div>
+                     </div>
+                  </div> -->
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <div class="back-to-top pull-right" scroll-to-item scroll-to="#top-scroll"> <img src="frontend/img/top-scroll.png" alt="Renita">
+   </div>
+</section>

@@ -1,0 +1,52 @@
+{
+    "title": "Sub Category",
+    "desciption": "",
+    "sortable":"SubCategory/sort",
+    "pageType": "view",
+    "fields": [{
+        "name": "Category-Name",
+        "isSort": "",
+        "type": "text",
+        "tableRef": "category.name"
+    },{
+        "name": "Sub-Category-Name",
+        "isSort": "",
+        "type": "text",
+        "tableRef": "subCatName"
+    },{
+        "name": "Status",
+        "isSort": "",
+        "tableRef": "status"
+    },{
+        "name": "Video",
+        "type": "text",
+        "isSort": "",
+        "tableRef": "video"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "mode_edit",
+        "color": "blue",
+        "action": "redirect",
+        "jsonPage": "editSubCategory",
+        "fieldsToSend": ["_id"],
+        "callFindOne": "SubCategory/getone"
+    }, {
+        "name": "delete",
+        "icon": "delete",
+        "color": "red",
+        "action": "apiCallConfirm",
+        "title": "Delete SubCategory",
+        "content": "Are you sure you want to delete SubCategory?",
+        "api": "SubCategory/delete",
+        "fieldsToSend": [{
+            "name": "_id",
+            "value": "_id"
+        }]
+    }],
+    "apiCall": {
+        "url": "SubCategory/getLimited",
+        "params": ""
+    },
+    "createButtonState": "page({jsonName:'createSubCategory'})"
+}

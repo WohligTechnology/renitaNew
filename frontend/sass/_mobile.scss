@@ -1,0 +1,379 @@
+@media (max-width:1200px) {
+  p{
+    font-size: 14px;
+  }
+
+}
+
+
+@media screen and (max-width: $screen-sm-max) {
+
+  .navbar-nav{
+    float: none;
+  }
+
+  .navbar .collapse .navbar-nav li{
+     padding: 18px 10px;
+  }
+
+  .mobile-ui {
+    .panel-body{
+      padding: 0px 10px;
+    }
+  }
+
+  .head-top .mouse-scrolldown{
+    display: none;
+  }
+
+  .mob-min-s{
+    text-align: center;
+    margin: 10px auto 0;
+    display: block;
+  }
+  .head-top .mouse-scrolldown {
+    bottom: 5px;
+
+}
+    .doctorpg {
+        .flexslider {
+            width: 320px !important;
+            margin: 0 auto 60px;
+        }
+    }
+    .tab-list ul li a, .tab-list2 ul li a, .tab-list3 ul li a {
+      font-size: 14px;
+      padding: 8px 15px 8px 10px;
+      display: inherit;
+      width: 155px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+}
+.m-mb-0{
+  margin-top: 0px;
+}
+.slider-modal .carousel-control.right {
+    left: auto;
+    right: -100px;
+    background: transparent;
+}
+}
+@media screen and (max-width: $screen-xs-max) {
+
+  .follow-logo{
+    display: block;
+    margin: 0;
+  }
+  .book-tab {
+      right: 0;
+      width: 290px;
+    }
+    .book-tab.touch-down {
+      bottom: 629px !important;
+    }
+  // accordion for skin page
+  .sub-cat{
+    li :active{
+      background-color: #9dc8bf ;
+    }
+
+
+    padding: 0;
+    li{
+      border-bottom: 1px solid #499c83;
+      width: 100%;
+      padding: 10px;
+
+      a{
+        text-align: left;
+        font-size: 20px;
+
+      }
+
+    }
+    // li:hover{
+    //   background-color: #499c83;
+    // }
+    li:last-child{
+      border-bottom:none;
+    }
+  }
+  .panel-title{
+      font-weight: 600;
+  }
+  .panel-default{
+    .panel-heading{
+        // background-color:  #499c83 ;
+    }
+  }
+  // .accrordio-li{
+  //   li:active{
+  //     background-color: #9dc8bf;
+  //   }
+  // }
+
+  .sub_cat_head{
+    border-color: rgb(47, 133, 150);
+    margin: 0px !important;
+    background-color: rgb(47, 133, 150);
+    padding: 10px 10px;
+    color:white;
+    font-weight: 600;
+  }
+.cat-menu{
+  .fa{
+    font-size: 30px;
+    margin-top: -0.2em;
+  }
+  .panel-heading {
+    padding: 0px !important;
+    cursor: pointer;
+  }
+  .fa-angle-down:before {
+    // position: absolute;
+    // right:  51px;
+    // font-size: 40px;
+    color:#fff;
+  }
+  .fa-angle-up:before {
+    // position: absolute;
+    // right:  51px;
+    // font-size: 40px;
+    color:#fff;
+  }
+}
+
+
+  // End od css for accordion skin page
+  .slider-modal .modal-dialog {
+   width: auto;
+}
+.renitamenu .btn-hide {
+    margin: 24px 0px 0 15px;
+}
+  .mob-min-s{
+    text-align: center;
+    margin: 10px auto 0;
+    display: block;
+  }
+    .tab-list2 ul li a {
+        padding: 5px 31px 7px 20px !important;
+    }
+    .navbar .collapse .navbar-nav li {
+        padding: 18px 14px;
+    }
+    .mob-mtp{
+      margin: 5px 0px;
+    }
+    .text-cn{
+      h2{
+        font-size: 22px;
+        text-align: center;
+      }
+    }
+    .img-c{
+      text-align: center;
+  margin: 0 auto;
+    }
+    h1{
+      font-size: 26px;
+    }
+    .test-cont .flexslider {
+          padding: 10px;
+      h4 {
+
+        font-size: 22px;
+    }
+    p {
+        font-size: 15px;
+    }
+    }
+    .menu-in {
+
+      overflow: scroll;
+  }
+  .related-box {
+    margin-bottom: 30px;
+}
+.navbar {
+  display: none;
+}
+
+.doctor-box{
+  width: 50%;
+}
+.docs-detail .descp{
+  padding: 0px 30px 20px;
+}
+.test-cont .flexslider .flex-direction-nav{
+   .flex-prev, .flex-next{
+     top: 15%;
+   }
+}
+.testimonial-slidetitle{
+  padding: 0px 20px;
+}
+
+//CONTACT US TAB
+.super-form{
+  padding: 10px;
+  .button-sub{
+    padding-top: 10px;
+    button{
+      height: auto;
+      font-size: 10px;
+    }
+  }
+  .custom-form .form-group .form-control{
+    height: auto;
+    font-size: 12px;
+  }
+
+  .back-to-top{
+    display: none;
+  }
+
+  .gender{
+    label{
+      font-size: 12px;
+    }
+    .custom-radio input[type="radio"] + label{
+      font-size: 12px;
+    }
+    textarea{
+      height: 70px;
+    }
+  }
+}
+//CONTACT US TAB END
+}
+@media (max-width:480px){
+  .navbar {
+    display: none;
+}
+  .related-box {
+    margin-bottom: 30px;
+}
+  .menu-in {
+
+    overflow: scroll;
+}
+  .blog-popular-tag {
+
+    margin-bottom: 30px;
+}
+  .slider-modal .fancy-bottom {
+    overflow: overlay;
+    padding: 30px;
+}
+  .slider-modal .carousel-control.right {
+
+    right: -25px;
+
+}
+  .slider-modal .carousel-control {
+
+    left: -50px;
+
+}
+  .test-cont .flexslider {
+        padding: 10px;
+    h4 {
+
+      font-size: 20px;
+  }
+  p {
+      font-size: 14px;
+  }
+  }
+  .fl-no{
+    float: none !important;
+  }
+  .mob-mtp{
+    margin: 5px 0px;
+  }
+  .text-cn{
+    h2{
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+  .img-c{
+    text-align: center;
+margin: 0 auto;
+  }
+  h1{
+    font-size: 24px;
+  }
+  .no-data{
+    min-height: 200px;
+  }
+  .em-logo {
+    width: 140px;
+
+}
+  .renitamenu .btn-hide {
+    margin: 15px 0px 0 15px;
+
+}
+  .main-img {
+      position: relative;
+      width: auto;
+overflow: hidden;
+img{
+width: 100% !important;
+}
+  }
+  .landing .flexslider .flex-direction-nav .flex-next {
+    right: 10px;
+    left: auto;
+}
+  .landing .flexslider .flex-direction-nav .flex-prev {
+    left: 10px;
+    left: auto;
+}
+.flexslider {
+  &:hover {
+      .flex-direction-nav {
+          .flex-prev {
+              left: 10px;
+              right: auto;
+          }
+
+          .flex-next {
+              right: 10px;
+              left: auto;
+          }
+
+      }
+  }
+    .flex-direction-nav {
+      .flex-prev {
+
+          left: 10px;
+      }
+
+      .flex-next {
+          right: 10px;
+
+      }
+      a {
+
+          width: 50px !important;
+
+          // padding: 2px 46px !important;
+          &.flex-prev:before {
+              content: url('../img/prevbtn.png');
+              transform: scale(0.5);
+          }
+
+          &.flex-next:before {
+              content: url('../img/nextbtn.png');
+                transform: scale(0.5);
+          }
+      }
+    }
+
+}
+}

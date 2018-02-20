@@ -1,0 +1,84 @@
+{
+    "title": "Create Header",
+    "jsonPage": "viewHeader",
+    "desciption": "",
+    "pageType": "create",
+    "fields": [{
+        "name": "Name",
+        "type": "select",
+        "tableRef": "name",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": "About",
+            "name": "About"
+        }, {
+            "value": "Blog",
+            "name": "Blog"
+        }, {
+            "value": "Before",
+            "name": "Before After"
+        }, {
+            "value": "Contact",
+            "name": "Contact"
+        }, {
+            "value": "Doctor",
+            "name": "Doctor"
+        }, {
+            "value": "Team",
+            "name": "Team"
+        }, {
+            "value": "Testimonial",
+            "name": "Testimonial"
+        }, {
+            "value": "Clinic",
+            "name": "Clinic Policy"
+        }]
+    }, {
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "option": "single",
+        "size": "1920 X 963",
+        "placeholder": "Enter Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Mobile Image",
+        "type": "image",
+        "tableRef": "image1",
+        "option": "single",
+        "size": "705 X 1087",
+        "placeholder": "Enter Mobile Image",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Status",
+        "type": "select",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "input3",
+        "validation": ["required", "trim", "unique"],
+        "url": [{
+            "value": true,
+            "name": "Enable"
+        }, {
+            "value": false,
+            "name": "Disable"
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser"
+    }, {
+        "name": "cancel",
+        "stateName": "page({jsonName:'viewHeader'})"
+    }],
+
+    "apiCall": {
+        "url": "Header/savedata"
+    }
+}
