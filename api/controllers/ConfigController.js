@@ -12,7 +12,7 @@ global["mongoose"] = require('mongoose');
 global["fs"] = require('fs');
 global["exec"] = require('child_process').exec;
 global["moment"] = require("moment");
-
+var cron = require('node-cron');
 // var checksum = require('./checksum');
 module.exports = {
 
@@ -251,3 +251,93 @@ module.exports = {
         fs.writeFileSync(".tmp/sitemap.xml", sitemap.toString());
     },
 };
+
+cron.schedule('50 * * * *', function () {
+    var urls = [{
+            url: '/http://renderclinic.com/about-us/',
+            changefreq: 'monthly',
+            priority: 0.7
+        },
+        {
+            url: '/http://renderclinic.com/team/',
+            changefreq: 'monthly',
+            priority: 0.7
+        },
+        {
+            url: '/http://renderclinic.com/consultant/',
+            changefreq: 'monthly',
+            priority: 0.7
+        },
+        {
+            url: '/http://renderclinic.com/before-after/',
+            changefreq: 'monthly',
+            priority: 0.7
+        },
+        {
+            url: '/http://renderclinic.com/testimonial/',
+            changefreq: 'monthly',
+            priority: 0.7
+        }, // changefreq: 'weekly',  priority: 0.5
+        {
+            url: '/http://renderclinic.com/blog/',
+            changefreq: 'monthly',
+            priority: 0.7
+        },
+        {
+            url: '/http://renderclinic.com/clinic-policy/',
+            changefreq: 'monthly',
+            priority: 0.7
+        },
+        {
+            url: '/http://renderclinic.com/contact/',
+            changefreq: 'monthly',
+            priority: 0.7
+        }
+    ];
+
+    async.waterfall([
+        function getDynamicUrl(callback) {
+            Category.getAllCat({}, function (err, respo) {
+                if (err) {
+                    callback(err, null);
+                } else {
+                    callback(null, respo);
+                }
+            });
+        },
+        function addDynamicUrl(respo, callback) {
+            async.each(respo, function (value, callback) {
+                console.log("Grabbing Dataset from ", value);
+                var urlDetails = {};
+                value.name = value.name.replace(/ /g, "%20");
+                urlDetails.url = '/http://renderclinic.com/category/' + value.name + '/' + value._id + '/'
+                urlDetails.changefreq = 'daily',
+                    urlDetails.priority = 0.3
+                urls.push(urlDetails);
+                callback();
+            }, function (err) {
+                if (err) {
+                    console.log("Error grabbing data");
+                    callback(err, null);
+                } else {
+                    console.log("Finished processing all data");
+                    callback(null, urls);
+                }
+            });
+        }
+    ], function asyncComplete(err, urls) {
+        if (err) {
+            console.log("error in asyncComplete");
+        } else {
+            console.log("---urls---",urls);
+            sitemap = sm.createSitemap({
+                hostname: 'http://renderclinic.com/',
+                cacheTime: 600000, // 600 sec - cache purge period
+                urls
+            });
+            fs.writeFileSync(".tmp/public/sitemap.xml", sitemap.toString());
+        }
+    });
+
+   
+});

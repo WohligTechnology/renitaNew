@@ -39,7 +39,11 @@ var schema = new Schema({
     timestamp: {
         type: Date,
         default: Date.now()
-    }
+    },
+    metaTagTitle:String,
+    metaTagDescription:String,
+    metaTagImage:String,
+    metaTagKeywords:String
 });
 module.exports = mongoose.model('Testimonial', schema);
 var models = {

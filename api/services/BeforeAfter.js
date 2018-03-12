@@ -27,7 +27,12 @@ var schema = new Schema({
     },
       video:{
       type:String
-    }
+    },
+    metaTagTitle:String,
+    metaTagDescription:String,
+    metaTagImage:String,
+    metaTagKeywords:String
+
 });
 module.exports = mongoose.model('BeforeAfter', schema);
 var models = {

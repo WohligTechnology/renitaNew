@@ -47,7 +47,11 @@ var schema = new Schema({
     anchor: {
         type: String,
         default: ""
-    }
+    },
+    metaTagTitle:String,
+    metaTagDescription:String,
+    metaTagImage:String,
+    metaTagKeywords:String
 });
 module.exports = mongoose.model('Category', schema);
 var models = {
