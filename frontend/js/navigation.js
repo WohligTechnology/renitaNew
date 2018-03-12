@@ -1,7 +1,7 @@
 
 // var adminurl = "http://www.wohlig.co.in/renitabackend/";
 // var adminurl = "http://api.renitarajan.com/";
-var adminurl= "http://localhost:1337/";
+var adminurl= "http://localhost:1337/api/";
 // var bookingUrl ="http://192.168.0.8:1337/"
 
 var imgurl = adminurl + "upload/";
@@ -99,6 +99,26 @@ var navigationservice = angular.module('navigationservice', [])
                 method: 'POST',
                 data: {
                     "_id": id
+                },
+                withCredentials: true
+            }).success(callback);
+        },
+        getPrevBlog: function(blogDate, callback) {
+            $http({
+                url: adminurl + 'blog/getPrevBlog',
+                method: 'POST',
+                data: {
+                    "blogDate": blogDate
+                },
+                withCredentials: true
+            }).success(callback);
+        },
+        getNextBlog: function(blogDate, callback) {
+            $http({
+                url: adminurl + 'blog/getNextBlog',
+                method: 'POST',
+                data: {
+                    "blogDate": blogDate
                 },
                 withCredentials: true
             }).success(callback);

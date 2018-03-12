@@ -151,6 +151,7 @@ var models = {
         var check = new RegExp(data.search, "i");
         data.pagenumber = parseInt(data.pagenumber);
         data.pagesize = parseInt(data.pagesize);
+        console.log(async.version);
         async.parallel([
                 function(callback) {
                     HomeSlider.count({}).exec(function(err, number) {
