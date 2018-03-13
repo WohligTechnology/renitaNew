@@ -63,9 +63,10 @@ module.exports = {
                 } else {
                     var catData = data;
                     res.metaView({
-                        title: catData.name,
-                        description: catData.description,
-                        image: catData.image
+                        title: catData.metaTagTitle,
+                        description: catData.metaTagDescription,
+                        image: catData.metaTagImage,
+                        keywords:catData.metaTagKeywords
                     });
                 }
             });
@@ -81,8 +82,10 @@ module.exports = {
                 } else {
                     var subCatData = data;
                     res.metaView({
-                        title: subCatData.subCatName,
-                        description: subCatData.subCatDescription
+                        title: subCatData.metaTagTitle,
+                        description: subCatData.metaTagDescription,
+                        image: subCatData.metaTagImage,
+                        keywords:subCatData.metaTagKeywords
                     });
                 }
             });
@@ -106,9 +109,10 @@ module.exports = {
                 } else {
                     var blogData = data;
                     res.metaView({
-                        title: blogData.name,
-                        description: blogData.description,
-                        image: blogData.image
+                        title: blogData.metaTagTitle,
+                        description: blogData.metaTagDescription,
+                        image: blogData.metaTagImage,
+                        keywords:blogData.metaTagKeywords
                     });
                 }
             });
