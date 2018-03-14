@@ -5,7 +5,7 @@
     <div class="borpos {{menu.colours}}"></div>
     <div class="submenu" ng-if="menu.subnav && menu.subnav.length>0" >
       <ul class="dropdown-menu">
-        <li ng-repeat="submenu in menu.subnav"
+        <li ng-repeat="submenu in menu.subnav">
             <a ui-sref="subCat({id:submenu.category,subcatname:submenu.subCatName,subid:submenu._id})">{{submenu.subCatName}}</a>
           <!-- <a ui-serf="subCat({catid:submenu.category,subcatname:submenu.subCatName,id:submenu._id})">sss{{submenu.subCatName}}</a> -->
           <!-- <a herf="{{submenu.link}}" ng-if="submenu.link">{{submenu.name}}</a> -->
