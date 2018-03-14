@@ -1178,34 +1178,36 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.blog = [];
         //  GET BLOG DETAIL
         NavigationService.getOneBlog($state.params.id, function (data) {
-            $scope.blog = data.data;
-            console.log("  $scope.blog", $scope.blog);
-            if ($scope.blog.blog.tag) {
-                if ($scope.blog.blog.tag == "") {
-                    $scope.tagmsg = "No Tags.";
-                } else {
-                    $scope.tagmsg = "";
+            console.log("data--", data);
+            if (data.value == true) {
+                $scope.blog = data.data;
+                console.log("  $scope.blog", $scope.blog);
+                if ($scope.blog.blog.tag) {
+                    if ($scope.blog.blog.tag == "") {
+                        $scope.tagmsg = "No Tags.";
+                    } else {
+                        $scope.tagmsg = "";
+                    }
                 }
+                TemplateService.title = $scope.blog.blog.name;
+                NavigationService.getPrevBlog(data.data.blog.timestamp, function (data) {
+                    if(_.isEmpty(data.data)){
+                        $scope.prev=false;
+                        console.log("inside if $scope.prevBlog", $scope.prev);
+                    }else{
+                        $scope.prev=true;
+
+                    }
+                });
+                NavigationService.getNextBlog(data.data.blog.timestamp, function (data) {
+                    if(_.isEmpty(data.data)){
+                        $scope.next=false;
+                        console.log("inside if $scope.nextBlog", $scope.next);
+                    }else{
+                        $scope.next=true;
+                    }
+                });
             }
-            TemplateService.title = $scope.blog.blog.name;
-            NavigationService.getPrevBlog($scope.blog.blog.timestamp, function (data) {
-                if(_.isEmpty(data.data)){
-                    $scope.prevBlog=false;
-                    console.log("inside if $scope.prevBlog", $scope.prevBlog);
-                }else{
-                    $scope.prevBlog=true;
-                    
-                }
-            });
-            // NavigationService.getNextBlog($scope.blog.blog.timestamp, function (data) {
-            //     $scope.nextBlog = data.data;
-            //     if(_.isEmpty($scope.nextBlog)){
-            //         $scope.nextBlog=false;
-            //         console.log("inside if $scope.nextBlog", $scope.nextBlog);
-            //     }else{
-            //         $scope.nextBlog=true;
-            //     }
-            // });
             // ga('send', {
             //     hitType: 'pageview',
             //     page: '/blog-detail/'
