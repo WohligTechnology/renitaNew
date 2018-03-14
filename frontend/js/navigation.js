@@ -1,7 +1,7 @@
 
 // var adminurl = "http://www.wohlig.co.in/renitabackend/";
 // var adminurl = "http://api.renitarajan.com/";
-var adminurl= "http://localhost:82/api/";
+var adminurl= "http://35.187.236.240:82/api/";
 // var bookingUrl ="http://192.168.0.8:1337/"
 
 var imgurl = adminurl + "upload/";
