@@ -26,7 +26,7 @@ mongoose = require('mongoose');
 
 //global["database"] = "clickmania";
 global["Grid"] = require('gridfs-stream');
-global["database"] = "renita_new";
+global["database"] = "renita";
 
 mongoose.Promise = global.Promise;
 
