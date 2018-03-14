@@ -122,10 +122,10 @@
                <div class="clearfix"></div>
                <div class="blog-pagination mt20">
                   <div class="float-left">
-                     <button type="button" name="button" ng-click="prevBlog(blog.blog.date)" class="text-up outline-btn btn-padding">Previous Post</button>
+                     <button type="button" name="button" ng-click="prevBlog(blog.blog.timestamp)" class="text-up outline-btn btn-padding" ng-disabled="prevBlog==false">Previous Post</button>
                   </div>
                   <div class="float-right">
-                     <button type="button" name="button" ng-click="nextBlog(blog.blog.date)" class="text-up outline-btn btn-padding">Next Post</button>
+                     <button type="button" name="button" ng-click="nextBlog(blog.blog.timestamp)" class="text-up outline-btn btn-padding" ng-disabled="nextBlog==false">Next Post</button>
                   </div>
                </div>
                <div class="clearfix"></div>

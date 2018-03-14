@@ -1188,6 +1188,24 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 }
             }
             TemplateService.title = $scope.blog.blog.name;
+            NavigationService.getPrevBlog($scope.blog.blog.timestamp, function (data) {
+                if(_.isEmpty(data.data)){
+                    $scope.prevBlog=false;
+                    console.log("inside if $scope.prevBlog", $scope.prevBlog);
+                }else{
+                    $scope.prevBlog=true;
+                    
+                }
+            });
+            // NavigationService.getNextBlog($scope.blog.blog.timestamp, function (data) {
+            //     $scope.nextBlog = data.data;
+            //     if(_.isEmpty($scope.nextBlog)){
+            //         $scope.nextBlog=false;
+            //         console.log("inside if $scope.nextBlog", $scope.nextBlog);
+            //     }else{
+            //         $scope.nextBlog=true;
+            //     }
+            // });
             // ga('send', {
             //     hitType: 'pageview',
             //     page: '/blog-detail/'
