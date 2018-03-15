@@ -160,7 +160,7 @@ var models = {
         data.pagesize = parseInt(data.pagesize);
         async.parallel([
                 function(callback) {
-                    Subscribe.count({
+                    ContactUs.count({
                         email: {
                             '$regex': check
                         }
