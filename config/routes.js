@@ -63,6 +63,11 @@ module.exports.routes = {
         action: "backend",
         skipAssets: true
     },
+    'GET /upload/*': {
+        controller: "UploadController",
+        action: "readFile",
+        skipAssets: true
+    },
 
     /***************************************************************************
      *                                                                          *
