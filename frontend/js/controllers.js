@@ -1163,7 +1163,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Blog");
         // $scope.navigation = NavigationService.getnav();
         $scope.myUrl = $location.absUrl();
-
         $scope.popularmsg = "Loading...";
         $scope.tagmsg = "Loading...";
         $(window).scroll(function () {
