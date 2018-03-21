@@ -36,19 +36,20 @@
      <!-- Facebook -->
      <meta property="fb:app_id" content="966242223397117" />
      <meta property="og:site_name" content="Renita">
-<meta property="og:title" content="The Rock"/>
-<meta property="og:type" content="movie"/>
-<meta property="og:url" content="http://www.imdb.com/title/tt0117500/"/>
-<meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
+     <meta property="og:title" content="<%= ((typeof title) == "undefined") ? "Renita " : title  %>" />
+     <meta property="og:description" content="<%= ((typeof description) == "undefined") ? "" : description  %>" />
+     <meta property="og:image" content="img/socialmedia.jpg">
+     <meta property="og:type" content="website" />
+     <meta property="og:url" content="<%= ((typeof url) == "undefined") ? "Renita " : url  %>" />
  
  
      <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
    <meta name="twitter:site" content="@Renita" />
    <meta name="twitter:title" content="<%= ((typeof title) == "undefined") ? "Renita " : title  %>" />
-   <meta name="twitter:image" content="frontend/img/socialmedia.jpg" />
+   <meta name="twitter:image" content="/img/socialmedia.jpg" />
    <meta name="twitter:image:alt" content="<%= ((typeof description) == "undefined") ? "Renita" : description  %>" />
-   <meta name="twitter:description" content="Take a look at this photographers profile on Clickmania ." />
+   <meta name="twitter:description" content="renita ." />
 
     <link rel="canonical" href="<%= ((typeof url) == "undefined") ? "ClickMania " : url  %>">
 
