@@ -119,5 +119,31 @@ module.exports = {
         } else {
             res.metaView();
         }
+    },
+      profile: function (req, res) {
+          console.log("Inside api")
+        if (req.params) {
+            var userId = req.params[0];
+            console.log("Inside api",userId)
+            Blog.getOne({
+                _id: userId
+            }, function(err, data) {
+                if (err) {
+                    res.callback(err, data);
+                } else if (_.isEmpty(data)) {
+                    res.callback(err, data);
+                } else {
+                    console.log("***************data is",data)
+                    var profileData = data;
+                    res.metaView({
+                        title: profileData.name,
+                        description: 'Take a look at this photographers profile on Clickmania',
+                        image: 'http://clickmania.in/frontend/img/social/facebook.png'
+                    });
+                }
+            });
+        } else {
+            res.metaView();
+        }
     }
 };

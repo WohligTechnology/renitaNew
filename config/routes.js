@@ -38,17 +38,15 @@ module.exports.routes = {
         skipAssets: true,
         skipRegex: /api|backend/i
     },
-
-    'GET /category/*': {
+      'GET /blog-detail/*': {
         controller: "WebController",
-        action: "category",
+        action: "profile",
         skipAssets: true,
         skipRegex: /api|backend/i
     },
-
-    'GET /blog-detail/*': {
+    'GET /category/*': {
         controller: "WebController",
-        action: "blog",
+        action: "category",
         skipAssets: true,
         skipRegex: /api|backend/i
     },
